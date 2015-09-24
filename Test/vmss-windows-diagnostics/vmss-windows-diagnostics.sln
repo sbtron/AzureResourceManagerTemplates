@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "vmss-windows-diagnostics", "vmss-windows-diagnostics\vmss-windows-diagnostics.deployproj", "{41183F55-D858-4BE9-AC6F-6B94694EDB7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41183F55-D858-4BE9-AC6F-6B94694EDB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41183F55-D858-4BE9-AC6F-6B94694EDB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41183F55-D858-4BE9-AC6F-6B94694EDB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41183F55-D858-4BE9-AC6F-6B94694EDB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
