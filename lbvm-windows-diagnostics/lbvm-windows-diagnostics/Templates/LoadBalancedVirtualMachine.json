@@ -311,7 +311,7 @@
             "displayName": "AzureDiagnostics"
           },
           "properties": {
-            "publisher": "Microsoft.Azure.Diagnostic",
+            "publisher": "Microsoft.Azure.Diagnostics",
             "type": "IaaSDiagnostics",
             "typeHandlerVersion": "1.4",
             "autoUpgradeMinorVersion": true,
