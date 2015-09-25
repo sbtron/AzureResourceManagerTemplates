@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "newStorageAccountName": {
-            "value": "simplervmss"
+            "value": ""
         },
         "adminUsername": {
-            "value": "sb-msft"
-        },
-        "dnsNameForPublicIP": {
-            "value": "simplevmdns"
+            "value": ""
         },
         "adminPassword": {
-            "value": "VS!Rocks"
+            "value": ""
+        },
+        "dnsNameForPublicIP": {
+            "value": ""
         }
     }
 }
