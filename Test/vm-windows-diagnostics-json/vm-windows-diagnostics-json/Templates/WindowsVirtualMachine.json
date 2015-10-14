@@ -474,7 +474,7 @@
                     "properties": {
                         "publisher": "WAD2AI.Diagnostics.Test",
                         "type": "IaaSDiagnostics",
-                        "typeHandlerVersion": "0.2",
+                        "typeHandlerVersion": "0.8",
                         "autoUpgradeMinorVersion": true,
                         "settings": {
                             "WadCfg": "[variables('wadconfig')]",
