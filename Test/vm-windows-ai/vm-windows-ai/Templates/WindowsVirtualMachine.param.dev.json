@@ -3,13 +3,25 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "newStorageAccountName": {
-            "value": null
+            "value": ""
         },
         "adminUsername": {
-            "value": null
+            "value": ""
         },
         "dnsNameForPublicIP": {
-            "value": null
+            "value": ""
+        },
+        "adminPassword": {
+            "value": ""
+        },
+        "diagnosticsStorageAccountName": {
+            "value": ""
+        },
+        "diagnosticsStorageResourceGroup": {
+            "value": ""
+        },
+        "ApplicationInsightsInstrumentationKey": {
+            "value": ""
         }
     }
 }

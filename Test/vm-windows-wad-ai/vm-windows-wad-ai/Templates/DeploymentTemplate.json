@@ -502,7 +502,7 @@
             }
 
         },
-                "storageAccount": "[variables('diagnosticsStorageAccountName')]",
+                "storageAccount": "[variables('diagnosticsStorageAccountName')]"
               },
               "protectedSettings": {
                 "storageAccountName": "[variables('diagnosticsStorageAccountName')]",
