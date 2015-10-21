@@ -48,12 +48,12 @@
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "storageAccountType": "Standard_LRS",
-        "publicIPAddressName": "vmjsonip",
+        "publicIPAddressName": "vmpublicip",
         "publicIPAddressType": "Dynamic",
         "vmStorageAccountContainerName": "vhds",
-        "vmName": "vmjson",
+        "vmName": "MyWindowsVM",
         "vmSize": "Standard_A2",
-        "virtualNetworkName": "vmjsonvnet",
+        "virtualNetworkName": "vmVnet",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
         "diagnosticsStorageAccountName": "[parameters('newStorageAccountName')]",
@@ -61,8 +61,7 @@
         "accountid": "[concat('/subscriptions/',subscription().subscriptionId,'/resourceGroups/',variables('diagnosticsStorageAccountResourceGroup'),'/providers/','Microsoft.Storage/storageAccounts/', variables('diagnosticsStorageAccountName'))]",
         "wadconfig": {
             "DiagnosticMonitorConfiguration": {
-              "overallQuotaInMB": "4096",
-              "eventVolume": "Large",
+                "overallQuotaInMB": "4096",
                 "DiagnosticInfrastructureLogs": {
                     "scheduledTransferLogLevelFilter": "Error"
                 },
@@ -318,19 +317,11 @@
                         }
                     ]
                 },
-              "Metrics": {
-                "resourceId": "[concat('/subscriptions/',subscription().subscriptionId,'/resourceGroups/',resourceGroup().name ,'/providers/','Microsoft.Compute/virtualMachines/',variables('vmName'))]",
-                "MetricAggregation": [
-                  { "scheduledTransferPeriod": "PT1H" },
-                  { "scheduledTransferPeriod": "PT1M" }
-                ]
-              },
-              "EtwProviders": {
-                    "EtwEventSourceProviderConfiguration": [
-                        {
-                            "provider": "Microsoft-AzureTools-TestSource",
-                            "DefaultEvents": {}
-                        }
+                "Metrics": {
+                    "resourceId": "[concat('/subscriptions/',subscription().subscriptionId,'/resourceGroups/',resourceGroup().name ,'/providers/','Microsoft.Compute/virtualMachines/',variables('vmName'))]",
+                    "MetricAggregation": [
+                        { "scheduledTransferPeriod": "PT1H" },
+                        { "scheduledTransferPeriod": "PT1M" }
                     ]
                 }
             }
@@ -483,7 +474,7 @@
                     "properties": {
                         "publisher": "WAD2AI.Diagnostics.Test",
                         "type": "IaaSDiagnostics",
-                        "typeHandlerVersion": "0.2",
+                        "typeHandlerVersion": "0.8",
                         "autoUpgradeMinorVersion": true,
                         "settings": {
                             "WadCfg": "[variables('wadconfig')]",
