@@ -26,7 +26,6 @@
   <!-- vertag<:>end -->
   <ItemGroup>
     <Folder Include="Scripts\" />
-    <Folder Include="Templates\" />
     <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +34,8 @@
     </None>
     <Content Include="Scripts\Deploy-AzureResourceGroup.ps1" />
     <Content Include="Templates\WindowsVirtualMachine.json" />
+    <None Include="Templates\ApplicationInsightsResource.json" />
+    <None Include="Templates\ApplicationInsightsResource.param.dev.json" />
     <None Include="Templates\WindowsVirtualMachine.param.dev.json" />
   </ItemGroup>
   <ItemGroup>

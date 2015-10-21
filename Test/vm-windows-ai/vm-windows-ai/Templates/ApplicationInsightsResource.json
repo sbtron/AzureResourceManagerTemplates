@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "applicationInsightsName": {
+            "type": "string",
+            "metadata": {
+                "description": "Unique Name for the Application Insights Resource that will be created."
+            }
+        }
+  },
+  "variables": {
+  },
+  "resources": [
+    {
+      "name": "[concat(resourceGroup().name,parameters('applicationInsightsName'))]",
+      "type": "Microsoft.Insights/components",
+      "location": "Central US",
+      "apiVersion": "2014-04-01",
+      "tags": {
+        "displayName": "Component appinsights"
+      }
+    }
+  ],
+  "outputs": {
+
+  }
+}
