@@ -3,11 +3,11 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "applicationInsightsName": {
-            "type": "string",
-            "metadata": {
-                "description": "Unique Name for the Application Insights Resource that will be created."
-            }
-        }
+      "type": "string",
+      "metadata": {
+        "description": "Unique Name for the Application Insights Resource that will be created."
+      }
+    }
   },
   "variables": {
   },
@@ -23,6 +23,9 @@
     }
   ],
   "outputs": {
-
+    "ApplicationInsightsInstrumentationKey": {
+      "type": "string",
+      "value": "[reference(concat('Microsoft.Insights/components/',resourceGroup().name,parameters('applicationInsightsName'))).InstrumentationKey]"
+    }
   }
 }
