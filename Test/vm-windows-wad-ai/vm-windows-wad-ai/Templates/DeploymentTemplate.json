@@ -142,7 +142,7 @@
         }
       },
       {
-        "name": "[concat(variables('vmName'),'-ApplicationInsights')]",
+        "name": "[concat(resourceGroup().name,'-ApplicationInsights')]",
         "type": "Microsoft.Insights/components",
         "dependsOn": [
           "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
@@ -489,7 +489,7 @@
                 "Sink": 
                     {
                         "name": "applicationInsights",
-                        "ApplicationInsights": "[reference(concat('Microsoft.Insights/components/',variables('vmName'),'-ApplicationInsights')).InstrumentationKey]",
+                        "ApplicationInsights": "[reference(concat('Microsoft.Insights/components/',resourceGroup().name,'-ApplicationInsights')).InstrumentationKey]",
                         "Channels": {
                             "Channel": [
                                 {
