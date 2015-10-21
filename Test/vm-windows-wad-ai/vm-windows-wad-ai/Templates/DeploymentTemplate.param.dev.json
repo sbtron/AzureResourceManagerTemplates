@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "newStorageAccountName": {
-            "value": ""
+            "value": "wadaitest"
         },
         "adminUsername": {
-            "value": ""
+            "value": "sb-msft"
         },
         "adminPassword": {
-            "value": ""
+            "value": "VS!Rocks"
         },
         "dnsNameForPublicIP": {
-            "value": ""
+            "value": "wadaitest"
         }
     }
 }

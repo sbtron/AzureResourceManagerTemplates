@@ -3,16 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "newStorageAccountName": {
-            "value": "prettyprint"
+            "value": null
         },
         "adminUsername": {
-            "value": "sb-msft"
+            "value": null
         },
         "dnsNameForPublicIP": {
-            "value": "prettyprint"
-        },
-        "adminPassword": {
-            "value": "VS!Rocks"
+            "value": null
         }
     }
 }

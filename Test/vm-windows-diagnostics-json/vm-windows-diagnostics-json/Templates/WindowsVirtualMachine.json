@@ -48,12 +48,12 @@
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "storageAccountType": "Standard_LRS",
-        "publicIPAddressName": "vmjpip",
+        "publicIPAddressName": "vmjsonip",
         "publicIPAddressType": "Dynamic",
         "vmStorageAccountContainerName": "vhds",
-        "vmName": "vmjvm",
+        "vmName": "vmjson",
         "vmSize": "Standard_A2",
-        "virtualNetworkName": "vmjvnet",
+        "virtualNetworkName": "vmjsonvnet",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
         "diagnosticsStorageAccountName": "[parameters('newStorageAccountName')]",
@@ -61,7 +61,8 @@
         "accountid": "[concat('/subscriptions/',subscription().subscriptionId,'/resourceGroups/',variables('diagnosticsStorageAccountResourceGroup'),'/providers/','Microsoft.Storage/storageAccounts/', variables('diagnosticsStorageAccountName'))]",
         "wadconfig": {
             "DiagnosticMonitorConfiguration": {
-                "overallQuotaInMB": "4096",
+              "overallQuotaInMB": "4096",
+              "eventVolume": "Large",
                 "DiagnosticInfrastructureLogs": {
                     "scheduledTransferLogLevelFilter": "Error"
                 },
@@ -317,11 +318,19 @@
                         }
                     ]
                 },
-                "Metrics": {
-                    "resourceId": "[concat('/subscriptions/',subscription().subscriptionId,'/resourceGroups/',resourceGroup().name ,'/providers/','Microsoft.Compute/virtualMachines/',variables('vmName'))]",
-                    "MetricAggregation": [
-                        { "scheduledTransferPeriod": "PT1H" },
-                        { "scheduledTransferPeriod": "PT1M" }
+              "Metrics": {
+                "resourceId": "[concat('/subscriptions/',subscription().subscriptionId,'/resourceGroups/',resourceGroup().name ,'/providers/','Microsoft.Compute/virtualMachines/',variables('vmName'))]",
+                "MetricAggregation": [
+                  { "scheduledTransferPeriod": "PT1H" },
+                  { "scheduledTransferPeriod": "PT1M" }
+                ]
+              },
+              "EtwProviders": {
+                    "EtwEventSourceProviderConfiguration": [
+                        {
+                            "provider": "Microsoft-AzureTools-TestSource",
+                            "DefaultEvents": {}
+                        }
                     ]
                 }
             }
